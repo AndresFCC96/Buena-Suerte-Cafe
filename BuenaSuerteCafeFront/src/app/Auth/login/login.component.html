@@ -1,3 +1,25 @@
-<body>
-  <p>Hola</p>
-</body>
+<title>Ingreso de usuarios</title>
+<header class="header">
+  <div class="container vh-60">
+    <div class="login-box">
+      <img src="../assets/Logos/coffee-bean.png" alt="img-loging" class="img-logo">
+      <h1 class="text-reset">Ingrese aqui</h1>
+      <form action="" >
+        <!-- #loginForm="ngForm" -->
+        <label for="Usuario" class="texto">Usuario</label>
+        <input  name="usuario" type="text" placeholder="Ingrese su nombre de usuario" class="user">
+        <!-- [(ngModel)]="usuario" -->
+        <label for="Contraseña" class="texto">Contraseña</label>
+        <input  name="password" type="password" placeholder="Ingrese su Contraseña"  >
+        <!-- [(ngModel)]="contra" -->
+        <!-- (click)='s' -->
+        <button type="submit" name="aceptar"class="boton">aceptar</button>
+        <br>
+        <a href="" class="links">¿Olvidaste tu contraseña?</a><br>
+        <a href="" class="links">¿No tienes cuenta?. Registrate aqui</a>
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- (click)="loggearse()" -->

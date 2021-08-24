@@ -5,7 +5,7 @@ import { AuthModule } from './Auth/auth.module';
 const routes: Routes = [];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes),
+  imports: [RouterModule.forRoot(routes),
   AuthModule],
   exports: [RouterModule]
 })
