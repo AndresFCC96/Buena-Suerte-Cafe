@@ -1,34 +1,62 @@
-:root {
-    --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
-  }
-  
-  body {
-    background: #111 !important;
-  }
-  
-  .card {
-    background: #222;
-    border: 1px solid #dd2476;
-    color: rgba(250, 250, 250, 0.8);
-    margin-bottom: 2rem;
-  }
-  
-  .btn {
-    border: 5px solid;
-    border-image-slice: 1;
-    background: var(--gradient) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    border-image-source:  var(--gradient) !important; 
-    text-decoration: none;
-    transition: all .4s ease;
-  }
-  
-  .btn:hover, .btn:focus {
-        background: var(--gradient) !important;
-    -webkit-background-clip: none !important;
-    -webkit-text-fill-color: #fff !important;
-    border: 5px solid #fff !important; 
-    box-shadow: #222 1px 0 10px;
-    text-decoration: underline;
-  }
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800);
+
+section{
+    padding:60px 0px;
+    font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+    color: #4C4C4C;
+    word-spacing: 5px;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom:30px;
+    font-family: 'Raleway', sans-serif;
+}
+
+p{
+    font-size:13px;
+}
+
+.ion-minus{
+    padding:0px 10px;
+}
+
+#blog{
+	background-color:#f6f6f6;
+}
+
+#blog .carousel-indicators {
+    bottom: -60px;
+}
+
+#blog .carousel-indicators li{
+    background-color: #5db4c0;
+    height: 13px;
+    width: 13px;
+    margin: 5px;
+}
+
+#blog .carousel-indicators li.active{
+    background-color: #888383;
+}
+
+#blog .card-block{
+    padding: 10px;
+}
+
+#blog .card{
+    background-color: #FFF;
+    border: 1px solid #eceaea;
+    margin: 20px 0px;
+}
+
+.btn.btn-default {
+    background-color: #5db4c0;
+    color: #fff;
+    border-radius: 0;
+    border: none;
+    padding: 13px 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
