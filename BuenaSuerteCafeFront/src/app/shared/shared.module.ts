@@ -15,6 +15,10 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
   imports: [
     CommonModule,
     MDBBootstrapModule.forRoot()
-  ]
+  ],
+  exports: [
+    TopbarComponent,
+    FooterComponent
+    ]
 })
 export class SharedModule { }

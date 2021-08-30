@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { CarcarouselComponent } from './carcarousel/carcarousel.component';
 import { MDBBootstrapModule, MdbIconComponent } from 'angular-bootstrap-md';
 import { BlogsComponent } from './blogs/blogs.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { BlogsComponent } from './blogs/blogs.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     LandingRoutingModule,
     MDBBootstrapModule.forRoot()
   ]
