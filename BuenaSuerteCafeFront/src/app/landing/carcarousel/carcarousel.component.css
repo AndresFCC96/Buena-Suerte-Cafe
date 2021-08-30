@@ -1,0 +1,16 @@
+.ion-minus{
+    padding:0px 10px;
+}
+
+h2 {
+    color: #4C4C4C;
+    word-spacing: 5px;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom:30px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.mb-1{
+    margin-bottom: 3rem !important;
+}
