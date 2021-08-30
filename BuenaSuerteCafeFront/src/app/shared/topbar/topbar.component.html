@@ -1,0 +1,38 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black" [containerInside]="false">
+
+  <!-- Navbar brand -->
+
+  <mdb-navbar-brand><a class="navbar-brand" href="/Home"><img src="../assets/Logos/logo.png" class="img-fluid" width="40px">Buena Suerte Cafe</a></mdb-navbar-brand>
+
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+
+      <li class="nav-item dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <mdb-icon fas icon="bars"></mdb-icon> <span class="caret"></span>
+          </a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Contacto</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Nuestros servicios</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">¿Cómo funciona?</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Privacidad</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Términos y condiciones</a>
+          </div>
+      </li>
+
+      <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect href="/Login"><mdb-icon fas icon="user"></mdb-icon></a>
+      </li>
+
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

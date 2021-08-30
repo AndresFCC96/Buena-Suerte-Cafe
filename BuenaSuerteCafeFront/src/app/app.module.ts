@@ -4,21 +4,23 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './Auth/auth.module';
-import { TopbarComponent } from './topbar/topbar.component';
-import { FooterComponent } from './footer/footer.component';
+import { SharedModule } from './shared/shared.module';
+import { RouterModule, Routes } from '@angular/router';
+import { LandingModule } from './landing/landing.module';
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TopbarComponent,
-    FooterComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    SharedModule,
+    LandingModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],
