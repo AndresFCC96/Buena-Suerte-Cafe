@@ -5,12 +5,14 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { TopbarComponent } from './topbar/topbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
     TopbarComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
   ],
   exports: [
     TopbarComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
     ]
 })
 export class SharedModule { }
