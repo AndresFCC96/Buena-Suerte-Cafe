@@ -1,0 +1,60 @@
+.header{
+  background-image: url(../../../assets/Images/fondo_cafe.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+a{
+  font-weight: bolder;
+}
+
+p{
+  font-weight: bolder;
+}
+.img-logo{
+  margin-top: 15px;
+  height: 120px;
+}
+
+.header::after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 10px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.text-reset{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.botonCompra{
+  margin-left: 0px;
+}
+
+.botonCompra:hover {
+  background: mediumaquamarine;
+}
+
+.vh-50 {
+  height: 50vmin;
+}
+
+.text-success{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.textoMarca{
+  color: #B6D0E2;
+
+}
+
+.btn{
+  background-color: navy;
+}
