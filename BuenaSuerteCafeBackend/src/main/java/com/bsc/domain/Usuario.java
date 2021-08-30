@@ -1,5 +1,11 @@
 package com.bsc.domain;
 
-public class Usuario implements {
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
+public class Usuario implements Serializable{
 
 }
