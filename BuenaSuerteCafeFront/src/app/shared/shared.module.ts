@@ -6,6 +6,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HeaderComponent } from './header/header.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     MDBBootstrapModule.forRoot()
   ],
   exports: [
