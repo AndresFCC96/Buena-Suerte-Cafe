@@ -14,6 +14,7 @@ p{
 }
 .img-logo{
   margin-top: 15px;
+  margin-left: -180px;
   height: 80px;
 }
 
@@ -51,10 +52,16 @@ p{
 }
 
 .textoMarca{
-  color: #B6D0E2;
+  color: #ffffff;
+  font-size: 1.8rem;
 
 }
 
 .btn{
   background-color: navy;
+}
+
+.anclas{
+  margin-left: 350px;
+  margin-right: -200px;
 }
