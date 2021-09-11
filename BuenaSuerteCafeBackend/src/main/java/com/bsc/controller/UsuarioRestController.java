@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bsc.domain.Usuario;
-import com.bsc.DTO.UsuarioDto;
+import com.bsc.dto.UsuarioDto;
 import com.bsc.service.UsuarioService;
 
 @RestController

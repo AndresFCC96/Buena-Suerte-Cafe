@@ -25,8 +25,8 @@ public class Usuario implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "userid")
-	private Integer userID;
+	@Column(name = "userid", unique = true)
+	private Integer userid;
 	
 	@Column(name = "firstname")
 	private String firstName;
@@ -87,7 +87,7 @@ public class Usuario implements Serializable{
 			Ciudad cityid, String state, String createdby, Date creationdate, String modifiedby,
 			Date modificationdate) {
 		super();
-		this.userID = userID;
+		this.userid = userID;
 		this.firstName = firstName;
 		this.lastname = lastname;
 		this.email = email;
@@ -107,11 +107,11 @@ public class Usuario implements Serializable{
 	}
 
 	public Integer getUserID() {
-		return userID;
+		return userid;
 	}
 
 	public void setUserID(Integer userID) {
-		this.userID = userID;
+		this.userid = userID;
 	}
 
 	public String getFirstName() {

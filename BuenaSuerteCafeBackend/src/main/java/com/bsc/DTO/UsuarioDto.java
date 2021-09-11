@@ -1,4 +1,4 @@
-package com.bsc.DTO;
+package com.bsc.dto;
 
 import java.io.Serializable;
 import java.sql.Date;

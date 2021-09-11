@@ -2,7 +2,7 @@ package com.bsc.service;
 
 import org.springframework.stereotype.Service;
 
-import com.bsc.DTO.UsuarioDto;
+import com.bsc.dto.UsuarioDto;
 import com.bsc.domain.Usuario;
 
 @Service

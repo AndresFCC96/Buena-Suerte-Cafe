@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bsc.DTO.UsuarioDto;
+import com.bsc.dto.UsuarioDto;
 import com.bsc.domain.Usuario;
 import com.bsc.repository.CiudadRepository;
 import com.bsc.repository.UsuarioRepository;
@@ -37,6 +37,8 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public void registarUsuario(UsuarioDto usuarioDto) throws Exception {
 		// TODO Auto-generated method stub
+		
+		Usuario usuario = new Usuario();
 		
 		if(usuarioDto.getFirstName() == "" || usuarioDto.getFirstName() == null) {
 			throw new Exception("primer nombre invalido");
@@ -91,8 +93,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 		if(usuarioDto.getCreationdate() == null) {
 			throw new Exception("fecha creacion invalido");
 		}
-		
-		Usuario usuario = new Usuario();
 		
 		usuario.setFirstName(usuarioDto.getFirstName());
 		usuario.setLastname(usuarioDto.getLastname());
