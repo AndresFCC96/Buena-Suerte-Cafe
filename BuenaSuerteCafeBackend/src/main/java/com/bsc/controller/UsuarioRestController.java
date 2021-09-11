@@ -1,4 +1,4 @@
-package controller;
+package com.bsc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import service.UsuarioService;
+import com.bsc.service.UsuarioService;
 
-@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/usuario")
 public class UsuarioRestController {
+	
 	@Autowired
 	private UsuarioService usuarioService;
 	
@@ -22,7 +22,6 @@ public class UsuarioRestController {
 	public ResponseEntity<?> consultarUsuarioEmail(@RequestParam("email") String email){
 		
 		try {
-			
 			return ResponseEntity.ok().body(usuarioService.consultarUsuarioPorEmail(email));
 		}catch (Exception e) {
 			// TODO: handle exception
