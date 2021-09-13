@@ -7,7 +7,8 @@ import { AuthModule } from './Auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingModule } from './landing/landing.module';
-
+import { ShoppingModule } from './shopping/shopping.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -21,6 +22,8 @@ import { LandingModule } from './landing/landing.module';
     AuthModule,
     SharedModule,
     LandingModule,
+    ShoppingModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],
   providers: [],

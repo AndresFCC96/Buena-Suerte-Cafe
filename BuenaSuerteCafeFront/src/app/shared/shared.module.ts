@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
+import { ShoppingModule } from '../shopping/shopping.module';
 
 
 @NgModule({

@@ -4,6 +4,7 @@ import { AuthModule } from './Auth/auth.module';
 import { LandingModule } from './landing/landing.module';
 import { SharedModule } from './shared/shared.module';
 import { RegisterModule } from './register/register.module';
+import { ShoppingModule } from './shopping/shopping.module';
 
 const routes: Routes = [];
 
@@ -12,7 +13,8 @@ const routes: Routes = [];
   LandingModule,
   SharedModule,
   AuthModule,
-  RegisterModule
+  RegisterModule,
+  ShoppingModule
   ],
   exports: [RouterModule]
 })

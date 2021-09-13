@@ -6,5 +6,5 @@ import com.bsc.domain.Ciudad;
 
 @Service
 public interface CiudadService {
-	public Ciudad consultarCiudadPorId(Integer id)throws Exception;
+	public Ciudad consultarCiudadPorId(Integer id) throws Exception;
 }
