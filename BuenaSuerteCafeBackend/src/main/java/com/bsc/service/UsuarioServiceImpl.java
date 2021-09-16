@@ -93,7 +93,6 @@ public class UsuarioServiceImpl implements UsuarioService {
 		if(usuarioDto.getCreationdate() == null) {
 			throw new Exception("fecha creacion invalido");
 		}
-		
 		usuario.setFirstName(usuarioDto.getFirstName());
 		usuario.setLastname(usuarioDto.getLastname());
 		usuario.setEmail(usuarioDto.getEmail());
