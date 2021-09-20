@@ -60,7 +60,7 @@ public class Usuario implements Serializable{
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "cityid", nullable = false)
-	@JsonIgnoreProperties({"hibernateInitializer", "handler"})
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})  
 	private Ciudad cityid;
 	
 	@Column(name = "state")

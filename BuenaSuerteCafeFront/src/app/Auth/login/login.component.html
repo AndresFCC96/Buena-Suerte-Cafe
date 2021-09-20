@@ -7,13 +7,13 @@
       <form action="" >
         <!-- #loginForm="ngForm" -->
         <label for="Usuario" class="texto">Usuario</label>
-        <input  name="usuario" type="text" placeholder="Ingrese su nombre de usuario" class="user">
+        <input  name="usuario" type="text" placeholder="Ingrese su nombre de usuario" class="user" id="email">
         <!-- [(ngModel)]="usuario" -->
         <label for="Contraseña" class="texto">Contraseña</label>
-        <input  name="password" type="password" placeholder="Ingrese su Contraseña"  >
+        <input  name="password" type="password" placeholder="Ingrese su Contraseña" id="password" >
         <!-- [(ngModel)]="contra" -->
         <!-- (click)='s' -->
-        <button type="submit" name="aceptar"class="boton">aceptar</button>
+        <button type="submit" name="aceptar"class="boton" (click)="ValidarLogIn()">aceptar</button>
         <br>
         <a href="" class="links">¿Olvidaste tu contraseña?</a><br>
         <a href="/registerPatient" class="links">¿No tienes cuenta?. Registrate aqui</a>
