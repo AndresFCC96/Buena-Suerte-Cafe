@@ -1,21 +1,16 @@
-<div class="row">
-  <div class="col-lg-6 col-lg-offset-3 text-center">  
-      <h2>
-          <span class="ion-minus"></span>Nuestros Productos<span class="ion-minus"></span>
-      </h2>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis  dis parturient montes, nascetur ridiculus </p><br>
-  </div> 
-</div>  
-<div class="row col-lg-offset-1 mb-1">
-  <mdb-carousel [animation]="'slide'">
-    <mdb-carousel-item>
-      <img class="d-block " src="../../../assets/Images/imgCarrousel1.png" alt="First slide" width="1100px" height="400px">
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img class="d-block " src="../../../assets/Images/imgCarrousel2.png" alt="Second slide" width="1100px" height="400px">
-    </mdb-carousel-item>
-    <mdb-carousel-item>
-      <img class="d-block " src="../../../assets/Images/imgCarrousel3.png" alt="Third slide" width="1100px" height="400px">
-    </mdb-carousel-item>
-  </mdb-carousel>
+<div class="container">
+  <h2>Nuestros productos</h2>
+      <div class="content-all">
+          <div class="content-carrousel">
+              <figure><img src="../../../assets/Images/imgCarrousel1.png" [routerLink]="['/products']"></figure>
+              <figure><img src="../../../assets/Images/imgCarrousel2.png" [routerLink]="['/products']"></figure>
+              <figure><img src="../../../assets/Images/tipos-chocolate-t.jpg" [routerLink]="['/products']"></figure>
+              <figure><img src="../../../assets/Images/coctel-cafe-irlandes.jpg" [routerLink]="['/products']"></figure>
+              <figure><img src="../../../assets/Images/galletas-caseras-integrales-de-cafe-y-chocolate.jpg" [routerLink]="['/products']"></figure>
+              <figure><img src="../../../assets/Images/galletas-con-chips-chocolate-compressor-1200x675.jpg" [routerLink]="['/products']"></figure>
+              <figure><img src="../../../assets/Images/portada-adobe-m.jpg" [routerLink]="['/products']"></figure>
+              <figure><img src="../../../assets/Images/Vanilla-Cake-SQ.jpg" [routerLink]="['/products']"></figure>
+              <figure><img src="../../../assets/Images/d9f9eccdd87752c78993ef0c67e345d3_Cheseecake-de-fresa_1200_600.jpg" [routerLink]="['/products']"></figure>
+          </div>
+      </div>
 </div>

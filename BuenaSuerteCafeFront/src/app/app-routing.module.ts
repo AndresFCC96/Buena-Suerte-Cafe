@@ -5,6 +5,7 @@ import { LandingModule } from './landing/landing.module';
 import { SharedModule } from './shared/shared.module';
 import { RegisterModule } from './register/register.module';
 import { ShoppingModule } from './shopping/shopping.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 
 const routes: Routes = [];
 
@@ -14,7 +15,8 @@ const routes: Routes = [];
   SharedModule,
   AuthModule,
   RegisterModule,
-  ShoppingModule
+  ShoppingModule,
+  DashboardModule
   ],
   exports: [RouterModule]
 })

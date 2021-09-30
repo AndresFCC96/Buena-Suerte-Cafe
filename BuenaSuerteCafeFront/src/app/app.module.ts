@@ -9,6 +9,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingModule } from './landing/landing.module';
 import { ShoppingModule } from './shopping/shopping.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     LandingModule,
     ShoppingModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

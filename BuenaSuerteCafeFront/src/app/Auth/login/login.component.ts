@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  persona = {
+    nombre: "Andres",
+    edad: 14
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+    this.grabarDatos();
   }
 
+  grabarDatos(){
+    localStorage.setItem( "nombre", this.persona.nombre);
+  }
+
+  ingresar(){
+    if(localStorage.getItem("nombre") === "Andres"){
+      alert("Estas adentro");
+    }
+  }
 }

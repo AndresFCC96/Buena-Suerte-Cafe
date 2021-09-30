@@ -6,24 +6,23 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bsc.service.ProductoService;
+import com.bsc.service.BlogService;
 
 @CrossOrigin()
 @RestController
-@RequestMapping("/api/producto")
-public class ProductoRestController {
-	
+@RequestMapping("/api/blog")
+public class BlogsRestController {
+
 	@Autowired
-	private ProductoService productoService;
+	private BlogService blogService;
 	
 	@GetMapping("/consultarProductos")
-	public ResponseEntity<?> consultarProductos(){
+	public ResponseEntity<?> consultarBlogs(){
 		
 		try {
-			return ResponseEntity.ok().body(productoService.consultarTodosLosProductos());
+			return ResponseEntity.ok().body(blogService.consultarTodosLosBlogs());
 		}catch (Exception e) {
 			// TODO: handle exception
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
