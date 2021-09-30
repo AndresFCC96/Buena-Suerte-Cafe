@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopbarComponent implements OnInit {
 
+  nombre: string ;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.nombre = localStorage.getItem("nombre");
   }
 
 }

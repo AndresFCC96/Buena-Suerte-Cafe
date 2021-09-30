@@ -32,6 +32,8 @@ p{
 .text-reset{
   margin-left: 10px;
   margin-right: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 
 .botonCompra{
@@ -62,6 +64,15 @@ p{
 }
 
 .anclas{
-  margin-left: 350px;
+  margin-left: 200px;
   margin-right: -200px;
+
+}
+
+.dropdown{
+  margin-left: -20px;
+}
+
+.usuario{
+  margin-left: 15px;
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartItem } from 'src/app/models/ItemCart';
 import { Producto } from 'src/app/models/Producto';
 import { MensajeroService } from 'src/app/services/mensajero.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -13,6 +14,8 @@ export class ShoppingCartComponent implements OnInit {
   cartItems: any[] = [];
 
   cartTotal: number = 0;
+
+  nombre: string = localStorage.getItem("nombre");
 
   productoNuevo: Producto = new Producto();
 

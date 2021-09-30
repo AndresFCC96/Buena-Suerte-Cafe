@@ -15,12 +15,23 @@ import com.bsc.domain.Usuario;
 import com.bsc.dto.UsuarioDto;
 import com.bsc.service.UsuarioService;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/usuario")
 public class UsuarioRestController {
 	
 	@Autowired
 	private UsuarioService usuarioService;
+	
+	@GetMapping("/ValidateLogIn")
+	public ResponseEntity<?> validateLogIn(@RequestParam("email") String email, @RequestParam("password") String password){
+		try {
+			return ResponseEntity.ok().body(usuarioService.ValidateUsuario(email, password));
+		}catch (Exception e) {
+			// TODO: handle exception
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+		}
+	}
 	
 	@GetMapping("/consultarPorEmail")
 	public ResponseEntity<?> consultarUsuarioEmail(@RequestParam("email") String email){

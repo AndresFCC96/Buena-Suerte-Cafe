@@ -1,5 +1,10 @@
-<div *ngIf="cartItems.length === 0" class="alert alert-info alerta">Tu carrito de compras esta vacio</div>
+<div *ngIf="cartItems.length === 0 && nombre != null else elseBlock" class="alert alert-info alerta">Tu carrito de compras esta vacio</div>
 
+<ng-template #elseBlock>
+  <div class="alert alert-info alerta">
+    Inicia sesion antes de agregar cosas al carrito
+  </div>
+</ng-template>
 <ul *ngIf="cartItems.length > 0" class="list-group">
   <li class="list-group-item" *ngFor="let producto of cartItems">
     <app-cart-item [cartItem]=producto></app-cart-item>

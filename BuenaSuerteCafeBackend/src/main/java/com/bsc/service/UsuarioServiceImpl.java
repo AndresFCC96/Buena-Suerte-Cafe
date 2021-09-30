@@ -112,4 +112,35 @@ public class UsuarioServiceImpl implements UsuarioService {
 		usuarioRepository.save(usuario);
 	}
 
+	@Override
+	public Usuario ValidateUsuario(String email, String password) throws Exception {
+		// TODO Auto-generated method stub
+		if(email == "" || email == null) {
+			throw new Exception("email invalido");
+		}
+		
+		if(password == "" || password == null) {
+			throw new Exception("contraseña invalida");
+		}
+		
+		Optional<Usuario> usuario = Optional.ofNullable(usuarioRepository.findByEmail(email));
+		
+		
+		
+		if(usuario.isPresent()) {
+			Usuario aux = usuario.get();
+			System.out.print(password);
+			System.out.print(aux.getPassword());
+			if(aux.getPassword().equals(password)) {
+				aux.setPassword("");
+				return aux;
+			}else {
+				throw new Exception("contraseña invalida");
+			}
+			
+		}else {
+			throw new Exception("usuario no existe");
+		}
+	}
+
 }

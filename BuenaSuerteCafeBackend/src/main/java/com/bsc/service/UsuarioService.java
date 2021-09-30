@@ -12,5 +12,7 @@ public interface UsuarioService {
 	 */
 	public Usuario consultarUsuarioPorEmail(String email) throws Exception;
 	
+	public Usuario ValidateUsuario(String email, String password) throws Exception;
+	
 	public void registarUsuario(UsuarioDto usuario) throws Exception;
 }

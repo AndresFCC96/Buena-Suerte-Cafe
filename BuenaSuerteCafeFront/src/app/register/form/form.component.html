@@ -20,21 +20,21 @@
                     <div class="form-row">
                         <div class="col form-group">
                             <label>Nombre </label>   
-                            <input type="text" class="form-control" placeholder="Nombre" maxlength="20">
+                            <input type="text" class="form-control" placeholder="Nombre" maxlength="20" >
                         </div> <!-- form-group end.// -->
                         <div class="col form-group">
                             <label>Apellido</label>
-                            <input type="text" class="form-control" placeholder="Apellido" maxlength="20">
+                            <input type="text" class="form-control" placeholder="Apellido" maxlength="20" >
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Email</label>
-                            <input type="email" class="form-control" placeholder="Email" maxlength="50">
+                            <input type="email" class="form-control" placeholder="Email" maxlength="50" >
                         </div> <!-- form-group end.// -->
                         <div class="form-group col-md-6">
                             <label>Genero</label>
-                            <select id="inputGender" class="form-control">
+                            <select id="inputGender" class="form-control" >
                                 <option value="M">Masculino</option>
                                 <option value="F">Femenino</option>
                                 <option value="O">Otro</option>
@@ -46,7 +46,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Tipo de documento</label>
-                            <select id="inputTypeDocument" class="form-control">
+                            <select id="inputTypeDocument" class="form-control" >
                                 <option> CC</option>
                                 <option>TI</option>
                                 <option>CE</option>
@@ -56,35 +56,31 @@
                         </div> <!-- form-group end.// -->
                         <div class="form-group col-md-6">
                             <label>Numero de documento</label>
-                            <input type="text" class="form-control" maxlength="20">
+                            <input type="text" class="form-control" maxlength="20" >
                         </div> <!-- form-group end.// -->
                         
                     </div> <!-- form-row.// -->
                     <div class="form-row">
                         <div class="col form-group">
                             <label>Numero de telefono </label>   
-                            <input type="number" class="form-control" placeholder="Nombre">
+                            <input type="number" class="form-control" placeholder="Nombre" >
                         </div> <!-- form-group end.// -->
                         <div class="col form-group">
                             <label>Direccion</label>
-                            <input type="text" class="form-control" placeholder="Apellido" maxlength="50">
+                            <input type="text" class="form-control" placeholder="Apellido" maxlength="50" >
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Departamento</label>
                             <select id="inputState" class="form-control">
-                                <option> Antioquia</option>
-                                <option>Bogota D.C</option>
-                                <option>Valle del cauca</option>
+                                <option *ngFor="let departamento of departamentos" value="{{departamento.departmentid}}">{{departamento.description}}</option>
                             </select>
                         </div> <!-- form-group end.// -->
                         <div class="form-group col-md-6">
                             <label>Ciudad</label>
                             <select id="inputCity" class="form-control">
-                                <option>Bogota</option>
-                                <option>Cali</option>
-                                <option>Medellin</option>
+                                <option *ngFor="let ciudad of ciudades"  value="{{ciudad.cityid}}">{{ciudad.description}}</option>
                             </select>
                         </div> <!-- form-group end.// -->
                         

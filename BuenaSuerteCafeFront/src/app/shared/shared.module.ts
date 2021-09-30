@@ -8,7 +8,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { ShoppingModule } from '../shopping/shopping.module';
-
+import { MatIconModule } from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,9 @@ import { ShoppingModule } from '../shopping/shopping.module';
   imports: [
     CommonModule,
     RouterModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
     MDBBootstrapModule.forRoot()
   ],
   exports: [

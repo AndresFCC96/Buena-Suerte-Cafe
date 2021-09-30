@@ -4,16 +4,23 @@
     <div class="login-box">
       <img src="../assets/Logos/coffee-bean.png" alt="img-loging" class="img-logo">
       <h1 class="text-reset">Ingrese aqui</h1>
-      <form action="" >
+      <form [formGroup]="form">
         <!-- #loginForm="ngForm" -->
-        <label for="Usuario" class="texto">Usuario</label>
-        <input  name="usuario" type="text" placeholder="Ingrese su nombre de usuario" class="user">
-        <!-- [(ngModel)]="usuario" -->
-        <label for="Contraseña" class="texto">Contraseña</label>
-        <input  name="password" type="password" placeholder="Ingrese su Contraseña"  >
-        <!-- [(ngModel)]="contra" -->
-        <!-- (click)='s' -->
-        <button (click)="ingresar()" type="submit" name="aceptar"class="boton">aceptar</button>
+
+
+        <mat-form-field class="formFields" appearance="standard">
+          <mat-label>Ingrese su email</mat-label>
+          <input matInput formControlName="email" name="email"  placeholder="Email">
+          <mat-error *ngIf="form.controls.email.errors?.required">Email es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="formFields" appearance="standard">
+          <mat-label>Ingrese su contraseña</mat-label>
+          <input matInput formControlName="password" name="password" placeholder="Contraseña" >
+          <mat-error *ngIf="form.controls.email.errors?.required">La contraseña es requerida</mat-error>
+        </mat-form-field>
+
+        <button type="submit" name="aceptar"class="boton" (click)="ValidarLogIn()">aceptar</button>
         <br>
         <a href="" class="links">¿Olvidaste tu contraseña?</a><br>
         <a href="/registerPatient" class="links">¿No tienes cuenta?. Registrate aqui</a>

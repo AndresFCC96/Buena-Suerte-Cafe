@@ -11,9 +11,19 @@
       <a href="#" class="text-reset pr-3">Inicio</a>
       <a href="#"  [routerLink]="['/products']" routerLinkActive="active" class="text-reset pr-3">Nuestros productos</a>
       <!--  -->
-      <a href="#" [routerLink]="['Login']" routerLinkActive="active" class="text-reset">Ingresar</a>
-      <!--  -->
-      <!--  -->
+      <a href="#" *ngIf="nombre === null; else elseBlock" [routerLink]="['Login']" routerLinkActive="active" class="text-reset">Ingresar</a>
+      <ng-template #elseBlock>
+        <label>¡Hola! {{nombre}}
+          <button class="usuario" mat-mini-fab color="accent" aria-label="Ver cuenta"  routerLinkActive="active" [matMenuTriggerFor]="menu">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['/Dashboard']">Ver cuenta</button>
+            <button mat-menu-item (click)="cerrarSesion()">Cerrar sesion</button>
+          </mat-menu>
+        </label>
+      </ng-template>
+
     </div>
 
     </nav>
