@@ -10,11 +10,13 @@ import { environment } from 'src/environments/environment';
 export class HeaderComponent implements OnInit {
 
   nombre: string ;
+  rol: string ;
 
   constructor(public router: Router) { }
 
   ngOnInit(): void {
     this.nombre = localStorage.getItem("nombre");
+    this.rol = localStorage.getItem("rol");
   }
 
   cerrarSesion(){

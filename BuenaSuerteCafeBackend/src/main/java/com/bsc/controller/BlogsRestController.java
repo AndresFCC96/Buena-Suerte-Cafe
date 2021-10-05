@@ -6,11 +6,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bsc.service.BlogService;
 
-@CrossOrigin()
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/blog")
 public class BlogsRestController {
@@ -28,5 +29,17 @@ public class BlogsRestController {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
 		}
 		
+	}
+	
+	@GetMapping("/consultarBlogPorId")
+	public ResponseEntity<?> consultarBlogPorId(@RequestParam("id") Integer id){
+		//Hacemos un bloque de try catch para controlar los posibles errores
+		try {
+			//En caso de que exista un cliente con el nombre mandado por parametro lo devuelve
+			return ResponseEntity.ok(blogService.consultarBlogPorId(id));
+		} catch (Exception e) {
+			//En caso de no encontrar clientes devuelve un Internal Server Error con la excepcion 
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+		}
 	}
 }

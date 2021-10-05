@@ -5,22 +5,20 @@
       <img src="../assets/Logos/coffee-bean.png" alt="img-loging" class="img-logo">
       <h1 class="text-reset">Ingrese aqui</h1>
       <form [formGroup]="form">
-        <!-- #loginForm="ngForm" -->
-
 
         <mat-form-field class="formFields" appearance="standard">
           <mat-label>Ingrese su email</mat-label>
-          <input matInput formControlName="email" name="email"  placeholder="Email">
+          <input matInput formControlName="email" name="email" placeholder="Email">
           <mat-error *ngIf="form.controls.email.errors?.required">Email es requerido</mat-error>
         </mat-form-field>
 
         <mat-form-field class="formFields" appearance="standard">
           <mat-label>Ingrese su contraseña</mat-label>
-          <input matInput formControlName="password" name="password" placeholder="Contraseña" >
+          <input matInput formControlName="password" name="password" placeholder="Contraseña">
           <mat-error *ngIf="form.controls.email.errors?.required">La contraseña es requerida</mat-error>
         </mat-form-field>
 
-        <button type="submit" name="aceptar"class="boton" (click)="ValidarLogIn()">aceptar</button>
+        <button type="submit" name="aceptar" class="boton" (click)="ValidarLogIn()">aceptar</button>
         <br>
         <a href="" class="links">¿Olvidaste tu contraseña?</a><br>
         <a href="/registerPatient" class="links">¿No tienes cuenta?. Registrate aqui</a>

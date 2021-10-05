@@ -1,5 +1,6 @@
 package com.bsc.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -140,6 +141,28 @@ public class UsuarioServiceImpl implements UsuarioService {
 			
 		}else {
 			throw new Exception("usuario no existe");
+		}
+	}
+
+	@Override
+	public List<Usuario> consultarTodosLosUsuarios() throws Exception {
+		List<Usuario> listaUsuarios = usuarioRepository.findAll();
+		
+		if (listaUsuarios.isEmpty()) {
+			throw new Exception("No hay usuarios que mostrar");
+		}else {
+			return listaUsuarios;
+		}
+	}
+
+	@Override
+	public Usuario consultarUsuarioPorId(Integer idUsua) throws Exception {
+		Optional<Usuario> usuario = usuarioRepository.findById(idUsua);
+		
+		if(usuario.isPresent()) {
+			return usuario.get();
+		}else {
+			throw new Exception("El Usuario al que intenta acceder no existe.");
 		}
 	}
 

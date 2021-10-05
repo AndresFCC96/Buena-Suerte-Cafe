@@ -3,7 +3,10 @@
 
   <!-- Navbar brand -->
 
-  <mdb-navbar-brand><a class="navbar-brand" href=""><img src="../assets/Logos/logo.png" class="img-fluid" width="40px">Buena Suerte Cafe</a></mdb-navbar-brand>
+  <mdb-navbar-brand class="flex-row flex-wrap">
+    <a class="navbar-brand" href=""><img src="../assets/Logos/logo.png" class="img-fluid" width="40px">
+    </a>
+  </mdb-navbar-brand>
 
 
   <!-- Collapsible content -->
@@ -26,9 +29,9 @@
       </li>
 
       <li class="nav-item">
-        <a *ngIf="nombre else elseBlock" class="nav-link waves-light" mdbWavesEffect href="/Dashboard"><mdb-icon fas icon="user"></mdb-icon></a>
+        <a *ngIf="rol != 'Admin' else elseBlock" class="nav-link waves-light" mdbWavesEffect href="Dashboard/AdministracionDeProductos"><mdb-icon fas icon="user"></mdb-icon></a>
           <ng-template #elseBlock>
-            <a class="nav-link waves-light" mdbWavesEffect href="/Login"><mdb-icon fas icon="user"></mdb-icon></a>
+            <a class="nav-link waves-light" mdbWavesEffect href="Dashboard/PerfilUsuario"><mdb-icon fas icon="user"></mdb-icon></a>
           </ng-template>
       </li>
 

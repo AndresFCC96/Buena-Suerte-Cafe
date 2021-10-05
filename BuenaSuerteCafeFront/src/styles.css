@@ -1,4 +1,31 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #000000 inset !important;
+  -webkit-text-fill-color: white !important;
+}
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #0069C0;
+}
+
+.mat-row:nth-child(even){
+  background-color: #e4f0ec;
+}
+.mat-row:not(:nth-child(odd)){
+  background-color:#ffffff;
+}
+
+mat-dialog-container {
+  background: #ffffff !important;
+}
+
+.mat-form-field {
+  color: #000000;
+}

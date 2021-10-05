@@ -1,9 +1,9 @@
 export class Usuario {
-    userid:number;
+    userID:number;
     firstName: string;
     lastname: string;
     email: string;
-    documenttype: string;
+    documentype: string;
     documentnumber: string;
     phone: string;
     address: string;
@@ -21,10 +21,10 @@ export class Usuario {
         documenttype: string, documentnumber: string, phone:string, address: string,
         gender: string, password: string, role: string, cityid: number, state: string,
         createdby: string, creationdate: Date, modificatedby: string, modificationdate: Date){
-        this.userid = userid;
+        this.userID = userid;
         this.firstName = firstname;
         this.lastname = lastname;
-        this.documenttype = documenttype;
+        this.documentype = documenttype;
         this.documentnumber = documentnumber;
         this.email = email;
         this.phone = phone;

@@ -1,0 +1,218 @@
+<body>
+  <div class="wrapper">
+    <div class="sidebar" data-image="assets/Logos/logo.png">
+      <div class="sidebar-wrapper">
+
+        <div class="logo">
+          <a href="" class="simple-text">
+            Buena Suerte Cafe
+          </a>
+        </div>
+
+        <ul class="nav">
+          <li *ngIf="rol != 'Admin'">
+            <a class="nav-link" href="Dashboard/PerfilUsuario">
+              <i class="material-icons-round">face</i>
+              <p>Perfil de usuario</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="Dashboard/AdministracionDeProductos">
+              <i class="material-icons-round">inventory_2</i>
+              <p>Lista de productos</p>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="Dashboard/AdministracionDeUsuarios">
+              <i class="material-icons-round">manage_accounts</i>
+              <p>Lista de usuarios</p>
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="Dashboard/AdministracionDeBlogs">
+              <i class="material-icons-round">rss_feed</i>
+              <p>Lista de blogs</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+        <div class="container-fluid">
+          <a class="navbar-brand"> Administracion De Productos </a>
+          <button href="" class="navbar-toggler navbar-toggler-right dashIcon" type="button" data-toggle="collapse"
+            aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar burger-lines"></span>
+            <span class="navbar-toggler-bar burger-lines"></span>
+            <span class="navbar-toggler-bar burger-lines"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <ul class="nav navbar-nav mr-auto">
+              <!-- <li class="nav-item">
+                <span class="d-lg-none">Dashboard</span>
+              </li> -->
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" (click)="cerrarSesion() " >
+                  <span class="no-icon">Cerrar Sesion</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="flex flex-col flex-auto min-w-0 bg-principal-50" style="width: 100%;">
+
+        <div class="flex-auto p-6 sm:p-10">
+
+          <div class="bg-principal-50 mat-elevation-z2 rounded noBorderCard">
+
+            <div class="w-full flex items-center card-header border-b-2 borderBottom border-bottom-black h-12 px-4  ">
+              <span class="text-xl text-principal-700  font-semibold ">Filtro busqueda</span>
+            </div>
+
+            <form [formGroup]="form" class="w-full flex flex-row flex-wrap p-4 pb-0">
+
+              <div class="w-full sm:w-1/2 md:w-1/3 px-2">
+                <mat-form-field class="w-full" appearance="outline">
+                  <mat-label class="font-medium text-principal-0">Nombre</mat-label>
+                  <input matInput [autocomplete]="'off'" formControlName="nombre" tabindex="3">
+                </mat-form-field>
+              </div>
+
+              <div class="w-full sm:w-1/2 md:w-1/3 px-2">
+                <mat-form-field class="w-full" appearance="outline">
+                  <mat-label class="font-medium text-principal-0">Inventario</mat-label>
+                  <input matInput [autocomplete]="'off'" formControlName="inventario" tabindex="3">
+                </mat-form-field>
+              </div>
+
+              <div class="w-full sm:w-1/2 md:w-1/3 px-2">
+                <mat-form-field class="w-full" appearance="outline">
+                  <mat-label class="font-medium text-principal-0">Precio</mat-label>
+                  <input matInput [autocomplete]="'off'" formControlName="precio" tabindex="3">
+                </mat-form-field>
+              </div>
+
+
+              <div class="flex w-full ml-auto justify-end p-4 pt-0">
+                <button mat-raised-button
+                  class="rounded-full bg-principal-50 text-principal-900 cursor-pointer ring-principal-900 mr-2">
+                  Limpiar
+                </button>
+
+                <button mat-raised-button class="bg-principal-700 text-principal-50 btnprimario" type="submit">
+                  Buscar
+                  <mat-icon>
+                    <span class="material-icons-outlined ml-1">
+                      search
+                    </span>
+                  </mat-icon>
+                </button>
+              </div>
+            </form>
+
+
+          </div>
+
+          <div class="bg-principal-50 mat-elevation-z2 mt-8 rounded noBorderCard">
+            <div class="w-full card-header border-b-2 borderBottom  border-bottom-black px-4 ">
+              <div class="flex items-center flex-row justify-between">
+                <span class="text-xl text-principal-700  font-semibold ">Productos registrados</span>
+                <div class="flex items-center py-2">
+                  <button mat-raised-button class="bg-principal-700 text-principal-50 btnprimario" type="submit" (click)="verProducto()">
+                    Crear
+                    <mat-icon>
+                      <span class="material-icons-outlined ml-1">
+                        add
+                      </span>
+                    </mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <table mat-table [dataSource]="dataSource" class="w-full">
+
+              <ng-container matColumnDef="Nombre">
+                <mat-header-cell *matHeaderCellDef>
+                  <div class="w-full px-4 h3 text-lg text-principal-900">Nombre</div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let productos">
+                  <span class="w-full px-4 text-principal-0 font-medium text-center">{{productos.nombre}}</span>
+                </mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="Inventario">
+                <mat-header-cell *matHeaderCellDef>
+                  <div class="w-full px-4 h3 text-lg text-principal-900">Inventario</div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let productos">
+                  <span class="w-full px-4 text-principal-0 font-medium text-center">{{productos.inventario}}</span>
+                </mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="Precio">
+                <mat-header-cell *matHeaderCellDef>
+                  <div class="w-full px-4 h3 text-lg text-principal-900 ">Precio</div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let productos">
+                  <span class="w-full px-4 text-principal-0 font-medium text-center">{{productos.precio}}</span>
+                </mat-cell>
+              </ng-container>
+
+
+              <ng-container matColumnDef="Acciones">
+                <mat-header-cell *matHeaderCellDef>
+                  <div class="w-full px-4 h3 text-lg text-principal-900 ml-4">Acciones</div>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let producto" class="text-center">
+                  <button mat-icon-button type="submit" (click)="verProductoEditar(producto)" class="bg-principal-200 mr-1 absolute left-40">
+                    <mat-icon class="text-principal-50">visibility</mat-icon>
+                  </button>
+                  <button mat-icon-button type="submit" (click)="verProductoEliminar(producto)" class="bg-principal-100 absolute left-40">
+                    <mat-icon class="text-principal-50 justify-end">delete</mat-icon>
+                  </button>
+                </mat-cell>
+
+              </ng-container>
+
+              <mat-header-row *matHeaderRowDef="displayedColumns;" class="text-center">
+               <mat-row *matRowDef="let item; let even = even; columns: displayedColumns;"
+                  [ngClass]="{'bg-principal-400': even}" class="text-center ">
+                </mat-row>
+              </mat-header-row>
+
+            </table>
+
+
+
+            <mat-paginator class="rounded-xl" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+          </div>
+        </div>
+
+      </div>
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav>
+            <p class="copyright text-center">
+              ©
+              <script>
+                document.write(new Date().getFullYear())
+              </script>
+              <a href="https://github.com/AndresFCC96">Andres Campaz</a>
+            </p>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+
+
+  </div>
+</body>

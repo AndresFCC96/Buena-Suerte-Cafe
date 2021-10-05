@@ -1,6 +1,6 @@
 export class Producto {
 
-  id_producto:number;
+  idProducto:number;
   nombre:string;
   descripcion:string;
   cantidad: number;
@@ -8,8 +8,8 @@ export class Producto {
   precio:number;
   imagen:string;
 
-  constructor(id_producto = 0, nombre = '', cantidad=0, descripcion = '', inventario = 0, precio = 0, imagen=''){
-    this.id_producto = id_producto
+  constructor(idProducto = 0, nombre = '', cantidad=0, descripcion = '', inventario = 0, precio = 0, imagen=''){
+    this.idProducto = idProducto
     this.nombre = nombre
     this.descripcion = descripcion
     this.cantidad = cantidad

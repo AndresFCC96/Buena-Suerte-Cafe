@@ -16,4 +16,20 @@ export class ProductoService {
   consultarTodosLosProductos(): Observable<Producto[]>{
     return this.httpClient.get<Producto[]>(`${this.url}producto/consultarProductos`)
   }
+
+  consultarProductoPorId(id: number): Observable<Producto>{
+    return this.httpClient.get<Producto>(`${this.url}producto/consultarProductoPorId?id=${id}`)
+  }
+
+  guardarProducto(producto:Producto): Observable<Producto>{
+    return this.httpClient.post<Producto>(`${this.url}producto/crearProducto`, producto);
+  }
+
+  actualizarProducto(producto:Producto): Observable<Producto>{
+    return this.httpClient.put<Producto>(`${this.url}producto/actualizarProducto`, producto);
+  }
+
+  eliminarProducto(id:number): Observable<Producto>{
+    return this.httpClient.delete<Producto>(`${this.url}producto/eliminarProducto?id=${id}`);
+  }
 }

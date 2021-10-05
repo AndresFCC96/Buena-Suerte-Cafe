@@ -9,5 +9,8 @@ import com.bsc.domain.Producto;
 
 @Service
 public interface BlogService {
+	
+	public Blogs consultarBlogPorId(Integer idBlog) throws Exception;
+	
 	public List<Blogs> consultarTodosLosBlogs() throws Exception;
 }

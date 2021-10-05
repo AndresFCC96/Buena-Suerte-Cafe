@@ -33,6 +33,30 @@ public class UsuarioRestController {
 		}
 	}
 	
+	@GetMapping("/consultarUsuarioPorId")
+	public ResponseEntity<?> consultarUsuarioPorId(@RequestParam("id") Integer id){
+		//Hacemos un bloque de try catch para controlar los posibles errores
+		try {
+			//En caso de que exista un cliente con el nombre mandado por parametro lo devuelve
+			return ResponseEntity.ok(usuarioService.consultarUsuarioPorId(id));
+		} catch (Exception e) {
+			//En caso de no encontrar clientes devuelve un Internal Server Error con la excepcion 
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+		}
+	}
+	
+	@GetMapping("/consultarTodosLosUsuarios")
+	public ResponseEntity<?> consultarUsuarios(){
+		
+		try {
+			return ResponseEntity.ok().body(usuarioService.consultarTodosLosUsuarios());
+		}catch (Exception e) {
+			// TODO: handle exception
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+		}
+		
+	}
+	
 	@GetMapping("/consultarPorEmail")
 	public ResponseEntity<?> consultarUsuarioEmail(@RequestParam("email") String email){
 		
@@ -44,6 +68,7 @@ public class UsuarioRestController {
 		}
 		
 	}
+	
 	@PostMapping("/guardarUsuario")
 	public ResponseEntity<?> guardarUsuario(@RequestBody() UsuarioDto usuarioDto){
 		try {

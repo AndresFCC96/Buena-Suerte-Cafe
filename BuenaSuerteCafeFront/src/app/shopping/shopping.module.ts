@@ -9,6 +9,7 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { ShoppingFiltersComponent } from './shopping-filters/shopping-filters.component';
 import { CartItemComponent } from './shopping-cart/cart-item/cart-item.component';
 import { ProductItemComponent } from './shopping-list/product-item/product-item.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ProductItemComponent } from './shopping-list/product-item/product-item.
     CommonModule,
     SharedModule,
     ShoppingRoutingModule,
+    MatPaginatorModule
   ]
 })
 export class ShoppingModule { }

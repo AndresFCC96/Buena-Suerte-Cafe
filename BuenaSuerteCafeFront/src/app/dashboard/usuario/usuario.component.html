@@ -1,0 +1,262 @@
+<body>
+  <div class="wrapper">
+    <div class="sidebar" data-image="assets/Logos/logo.png">
+      <div class="sidebar-wrapper">
+
+        <div class="logo">
+          <a href="" class="simple-text">
+            Buena Suerte Cafe
+          </a>
+        </div>
+
+        <ul class="nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="Dashboard/PerfilUsuario">
+              <i class="material-icons-round">face</i>
+              <p>Perfil de usuario</p>
+            </a>
+          </li>
+          <li *ngIf="rol != 'Admin'">
+            <a class="nav-link" href="Dashboard/AdministracionDeProductos">
+              <i class="material-icons-round">inventory_2</i>
+              <p>Lista de productos</p>
+            </a>
+          </li>
+          <li *ngIf="rol != 'Admin'">
+            <a class="nav-link" href="Dashboard/AdministracionDeUsuarios">
+              <i class="material-icons-round">manage_accounts</i>
+              <p>Lista de usuarios</p>
+            </a>
+          </li>
+          <li *ngIf="rol != 'Admin'">
+            <a class="nav-link" href="Dashboard/AdministracionDeBlogs">
+              <i class="material-icons-round">rss_feed</i>
+              <p>Lista de blogs</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main-panel">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+        <div class="container-fluid">
+          <a class="navbar-brand"> Perfil de usuario </a>
+          <button href="" class="navbar-toggler navbar-toggler-right dashIcon" type="button" data-toggle="collapse"
+            aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-bar burger-lines"></span>
+            <span class="navbar-toggler-bar burger-lines"></span>
+            <span class="navbar-toggler-bar burger-lines"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <ul class="nav navbar-nav mr-auto">
+              <!-- <li class="nav-item">
+                <span class="d-lg-none">Dashboard</span>
+              </li> -->
+            </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="Dashboard/PerfilUsuario">
+                  <span class="no-icon">Cuenta</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" (click)="cerrarSesion() ">
+                  <span class="no-icon">Cerrar Sesion</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- End Navbar -->
+      <div class="flex flex-col flex-auto min-w-0 bg-principal-50" style="width: 100%;">
+
+        <div class="flex-auto p-6 sm:p-10">
+
+          <div class="w-full bg-principal-50 mat-elevation-z2 rounded noBorderCard">
+
+            <div class="w-full  card-header border-b-2 borderBottom border-bottom-black h-12 px-4  ">
+              <span class="text-xl text-principal-700  font-semibold ">Perfil de Usuario</span>
+            </div>
+
+            <div class="w-full row" style="height: 700px;">
+              <div class="w-1/2 bg-principal-400 ml-3" >
+                <div class="w-full bg-principal-50 mat-elevation-z2 rounded infoUsuarioCard">
+
+                  <div class="w-full flex items-center card-header border-b-2 borderBottom border-bottom-black h-12  ">
+                    <span class="text-xl text-principal-700  font-semibold ">Informacion del usuario</span>
+                  </div>
+
+                  <form [formGroup]="form" class="w-full flex flex-row flex-wrap p-4 pb-0  justify-center">
+
+
+                    <div class="w-full sm:w-1/2 md:w-1/2 px-2">
+                      <mat-form-field class="w-full" appearance="outline">
+                        <mat-label class="font-medium text-principal-0">Nombre</mat-label>
+                        <input matInput [autocomplete]="'off'" formControlName="nombre" tabindex="3">
+                      </mat-form-field>
+                    </div>
+
+
+                    <div class="w-full sm:w-1/2 md:w-1/2 px-2">
+                      <mat-form-field class="w-full " appearance="outline">
+                        <mat-label class="font-medium text-principal-0">Apellido</mat-label>
+                        <input matInput [autocomplete]="'off'" formControlName="apellido" tabindex="3">
+                      </mat-form-field>
+                    </div>
+
+                    <div class="w-full sm:w-1/2 md:w-1/2 px-2">
+                      <mat-form-field class="w-full " appearance="outline">
+                        <mat-label class="font-medium text-principal-0">Genero</mat-label>
+                        <input matInput [autocomplete]="'off'" formControlName="genero" tabindex="3">
+                      </mat-form-field>
+                    </div>
+
+                    <div class="w-full sm:w-1/2 md:w-1/2 px-2">
+                      <mat-form-field class="w-full " appearance="outline">
+                        <mat-label class="font-medium text-principal-0">Email</mat-label>
+                        <input matInput [autocomplete]="'off'" formControlName="email" tabindex="3">
+                      </mat-form-field>
+                    </div>
+
+                    <div class="w-full sm:w-1/2 md:w-1/2 px-2">
+                      <mat-form-field class="w-full " appearance="outline">
+                        <mat-label class="font-medium text-principal-0">Contraseña</mat-label>
+                        <input matInput [autocomplete]="'off'" formControlName="password" tabindex="3">
+                      </mat-form-field>
+                    </div>
+
+                    <div class="w-full sm:w-1/2 md:w-1/2 px-2">
+                      <mat-form-field class="w-full " appearance="outline">
+                        <mat-label class="font-medium text-principal-0">Tipo de documento</mat-label>
+                        <input matInput [autocomplete]="'off'" formControlName="tipoDocumento" tabindex="3">
+                      </mat-form-field>
+                    </div>
+
+                    <div class="w-full sm:w-1/2 md:w-2/3 px-2">
+                      <mat-form-field class="w-full " appearance="outline">
+                        <mat-label class="font-medium text-principal-0">Numero de Documento</mat-label>
+                        <input matInput [autocomplete]="'off'" formControlName="numeroDocumento" tabindex="3">
+                      </mat-form-field>
+                    </div>
+
+
+                    <div class="flex w-full ml-auto justify-end p-4 pt-0">
+
+                      <button mat-raised-button class="bg-principal-700 text-principal-50 btnprimario" type="submit">
+                        Guardar
+                        <mat-icon>
+                          <span class="material-icons-outlined ml-1">
+                            save_alt
+                          </span>
+                        </mat-icon>
+                      </button>
+                    </div>
+                  </form>
+
+
+                </div>
+              </div>
+
+              <div class="w-1/2 bg-principal-50 -ml-4 text-center">
+                <label class="w-full text-xl text-principal-700  font-semibold lbl">General</label>
+                <img class="imgUsuario" src="../../../assets/Images/wtdd.png">
+                <label class="w-full text-xl text-principal-700  font-semibold lbl">¡Bienvenido {{nombre}} {{apellido}}!</label>
+
+                <div class="w-full cartas mt-5">
+                  <div class="row justify-center">
+
+                    <div class="w-1/3 px-4 ">
+                      <div class="card l-bg-cherry">
+                        <div class="card-statistic-3 p-4">
+                          <div class="card-icon card-icon-large text-principal-700"><i class="fas fa-shopping-cart"></i></div>
+                          <div class="mb-4">
+                            <h5 class="card-title mb-0">Compras hechas</h5>
+                        </div>
+                        <div class="row align-items-center mb-2 d-flex">
+                          <div class="col-8 datosGeneral">
+                            <h2 class="mb-0">
+                              sfs
+                            </h2>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="w-1/3 px-4">
+                      <div class="card l-bg-cherry">
+                        <div class="card-statistic-3 p-4">
+                          <div class="card-icon card-icon-large text-principal-700"><i class="fas fa-star"></i></div>
+                          <div class="mb-4">
+                            <h5 class="card-title mb-0">Deseados</h5>
+                        </div>
+                        <div class="row align-items-center mb-2 d-flex">
+                          <div class="col-8 datosGeneral">
+                            <h2 class="mb-0">
+                              sfs
+                            </h2>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="w-1/3 px-4 ">
+                      <div class="card l-bg-cherry ">
+                        <div class="card-statistic-3 p-4 ">
+                          <div class="card-icon card-icon-large text-principal-700 "><i class="fas fa-sort-numeric-up"></i></div>
+                          <div class="mb-4 text-center">
+                            <h5 class="card-title mb-0">Cliente numero</h5>
+                        </div>
+                        <div class="row align-items-center mb-2 d-flex">
+                          <div class="col-8 datosGeneral">
+                            <h2 class="mb-0 ">
+                              {{id}}
+                            </h2>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+
+
+            </div>
+
+
+            <!-- <div class="w-1/2 h-1/2 bg-principal-900" style="height: 800px;">
+
+            </div> -->
+
+
+
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <nav>
+            <p class="copyright text-center">
+              ©
+              <script>
+                document.write(new Date().getFullYear())
+              </script>
+              <a href="https://github.com/AndresFCC96">Andres Campaz</a>
+            </p>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+
+
+  </div>
+</body>

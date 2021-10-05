@@ -47,7 +47,7 @@ export class ShoppingCartComponent implements OnInit {
             }
           }
     })
-    this.cartTotal -= productoAEliminar.precio;
+    this.cartTotal -= Number(productoAEliminar.precio);
     this.cartItems = this.cartItems.filter(item => item !== productoAEliminar)
     console.log(this.cartItems)
     delete this.cartItems[posicion];

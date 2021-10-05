@@ -1,0 +1,23 @@
+.imgUsuario{
+  height: 300px;
+  width: 300px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+.lbl{
+  margin-top: 10px;
+}
+
+.infoUsuarioCard{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 55px;
+}
+
+.datosGeneral{
+  margin-left: auto;
+  margin-right: auto;
+}

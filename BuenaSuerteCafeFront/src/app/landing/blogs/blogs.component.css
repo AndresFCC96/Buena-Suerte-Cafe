@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800);
 
 section{
+    margin-top: -45px;
     padding:60px 0px;
     font-family: 'Raleway', sans-serif;
 }
@@ -23,7 +24,7 @@ p{
 }
 
 #blog{
-	background-color:#f6f6f6;
+	background-color:#ffffff;
 }
 
 #blog .carousel-indicators {

@@ -14,7 +14,7 @@ p{
 }
 .img-logo{
   margin-top: 15px;
-  margin-left: -180px;
+  margin-left: -280px;
   height: 80px;
 }
 
@@ -65,7 +65,7 @@ p{
 
 .anclas{
   margin-left: 200px;
-  margin-right: -200px;
+  margin-right: -300px;
 
 }
 
@@ -75,4 +75,8 @@ p{
 
 .usuario{
   margin-left: 15px;
+}
+
+.textoImg{
+  margin-top: 40px;
 }

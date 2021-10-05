@@ -16,4 +16,8 @@ export class BlogService {
   consultarTodosLosBlogs(): Observable<Blogs[]>{
     return this.httpClient.get<Blogs[]>(`${this.url}blog/consultarProductos`)
   }
+
+  consultarProductoPorId(id: number): Observable<Blogs>{
+    return this.httpClient.get<Blogs>(`${this.url}usuario/consultarBlogPorId?id=${id}`)
+  }
 }

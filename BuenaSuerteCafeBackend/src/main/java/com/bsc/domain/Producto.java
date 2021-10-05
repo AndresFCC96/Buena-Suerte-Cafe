@@ -19,11 +19,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "producto")
 public class Producto implements Serializable{
 
+
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 6961683673785004247L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_producto", unique = true)
@@ -36,12 +38,12 @@ public class Producto implements Serializable{
 	private Integer inventario;
 	
 	@Column(name = "precio")
-	private String precio;
+	private Integer precio;
 	
 	@Column(name = "descripcion")
 	private String descripcion;
 	
-	@Column(name = "imagen")
+	@Column(name = "imagen", length = 500000)
 	private String imagen;
 	
 	public Producto() {
@@ -50,7 +52,7 @@ public class Producto implements Serializable{
 	
 	
 
-	public Producto(Integer idProducto, String nombre, Integer inventario, String precio, String descripcion,
+	public Producto(Integer idProducto, String nombre, Integer inventario, Integer precio, String descripcion,
 			String imagen) {
 		super();
 		this.idProducto = idProducto;
@@ -85,11 +87,11 @@ public class Producto implements Serializable{
 		this.inventario = inventario;
 	}
 
-	public String getPrecio() {
+	public Integer getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(String precio) {
+	public void setPrecio(Integer precio) {
 		this.precio = precio;
 	}
 
