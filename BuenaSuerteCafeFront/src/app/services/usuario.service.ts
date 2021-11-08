@@ -30,4 +30,8 @@ export class UsuarioService {
     return this.httpClient.get<Usuario>(`${this.url}usuario/consultarUsuarioPorId?id=${id}`)
   }
 
+  guardarUsuario(usuario: Usuario): Observable<Usuario>{
+    return this.httpClient.post<Usuario>(`${this.url}usuario/guardarUsuario`, usuario)
+  }
+
 }

@@ -1,112 +1,124 @@
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-
-
-<app-topbar></app-topbar>
+<title>Ingreso de usuarios</title>
 <header class="header">
-    <div class="row justify-content-center" >
-        <div class="col-md-8">
-            <div class="card" style="margin-bottom: 2rem;margin-top: 2rem;">
-            <div class="card-header texto" style="justify-content: center; text-align: center; background-color: black;" >
-                <h4 class="card-title mt-2">Registrar</h4>
-            </div>
-            <article class="card-body texto" style="background-color: black;">
-                <form>
-                    <div class="form-row">
-                        <div class="col form-group">
-                            <label>Nombre </label>   
-                            <input type="text" class="form-control" placeholder="Nombre" maxlength="20" >
-                        </div> <!-- form-group end.// -->
-                        <div class="col form-group">
-                            <label>Apellido</label>
-                            <input type="text" class="form-control" placeholder="Apellido" maxlength="20" >
-                        </div> <!-- form-group end.// -->
-                    </div> <!-- form-row end.// -->
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Email</label>
-                            <input type="email" class="form-control" placeholder="Email" maxlength="50" >
-                        </div> <!-- form-group end.// -->
-                        <div class="form-group col-md-6">
-                            <label>Genero</label>
-                            <select id="inputGender" class="form-control" >
-                                <option value="M">Masculino</option>
-                                <option value="F">Femenino</option>
-                                <option value="O">Otro</option>
-                            </select>
-                        </div> <!-- form-group end.// -->
-                        
-                        
-                    </div> <!-- form-group end.// -->
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Tipo de documento</label>
-                            <select id="inputTypeDocument" class="form-control" >
-                                <option> CC</option>
-                                <option>TI</option>
-                                <option>CE</option>
-                                <option>DD</option>
-                                <option>PASSPORT</option>
-                            </select>
-                        </div> <!-- form-group end.// -->
-                        <div class="form-group col-md-6">
-                            <label>Numero de documento</label>
-                            <input type="text" class="form-control" maxlength="20" >
-                        </div> <!-- form-group end.// -->
-                        
-                    </div> <!-- form-row.// -->
-                    <div class="form-row">
-                        <div class="col form-group">
-                            <label>Numero de telefono </label>   
-                            <input type="number" class="form-control" placeholder="Nombre" >
-                        </div> <!-- form-group end.// -->
-                        <div class="col form-group">
-                            <label>Direccion</label>
-                            <input type="text" class="form-control" placeholder="Apellido" maxlength="50" >
-                        </div> <!-- form-group end.// -->
-                    </div> <!-- form-row end.// -->
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Departamento</label>
-                            <select id="inputState" class="form-control">
-                                <option *ngFor="let departamento of departamentos" value="{{departamento.departmentid}}">{{departamento.description}}</option>
-                            </select>
-                        </div> <!-- form-group end.// -->
-                        <div class="form-group col-md-6">
-                            <label>Ciudad</label>
-                            <select id="inputCity" class="form-control">
-                                <option *ngFor="let ciudad of ciudades"  value="{{ciudad.cityid}}">{{ciudad.description}}</option>
-                            </select>
-                        </div> <!-- form-group end.// -->
-                        
-                    </div> <!-- form-row.// -->
-                    <div class="form-row">
-                        <div class="col form-group">
-                            <label>Contraseña </label>   
-                            <input type="password" class="form-control" placeholder="Contraseña">
-                        </div> <!-- form-group end.// -->
-                        <div class="col form-group">
-                            <label>Confirmar contraseña</label>
-                            <input type="password" class="form-control" placeholder="Confirmar" maxlength="50">
-                        </div> <!-- form-group end.// -->
-                    </div> <!-- form-row end.// -->
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block"> Registrar  </button>
-                    </div> <!-- form-group// -->      
-                                                              
-                </form>
-            </article> <!-- card-body end .// -->
-            
-            </div> <!-- card.// -->
-        </div> <!-- col.//-->
-        
-    </div> <!-- row.//-->
+  <div class="w-5/12 h-4/5 card-header border-b-2 bg-principal-0 h-10 ml-auto mr-auto card">
+    <img src="../assets/Logos/coffee-bean.png" alt="img-loging" class="img-logo">
+    <h1 class="text-principal-50 text-3xl mr-auto ml-auto mt-9">Registro</h1>
+    <div class="w-full ">
+      <!-- <div class="w-full flex flex-row"> -->
+      <form [formGroup]="form" class="flex flex-row flex-wrap mt-5">
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Ingrese su Nombre</mat-label>
+          <input matInput formControlName="nombre" name="nombre" placeholder="Nombre">
+          <mat-error *ngIf="form.controls.nombre.errors?.required">Nombre es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Ingrese su apellido</mat-label>
+          <input matInput class="text-principal-50" formControlName="apellido" name="apellido" placeholder="Apellido">
+          <mat-error *ngIf="form.controls.apellido.errors?.required">Apellido es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Ingrese su email</mat-label>
+          <input matInput formControlName="email" name="email" placeholder="Email">
+          <mat-error *ngIf="form.controls.email.errors?.required">Email es requerido</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Selecciona su Genero</mat-label>
+          <mat-select formControlName="genero">
+            <mat-option *ngFor="let genero of generos" [value]="genero.abreviatura">{{genero.descripcion}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Ingrese su contraseña</mat-label>
+          <input matInput formControlName="telefono" name="telefono" placeholder="Contraseña">
+          <mat-error *ngIf="form.controls.password.errors?.required">La contraseña es requerida</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Confirmar Contraseña</mat-label>
+          <input matInput formControlName="passwordVerification" name="passwordVerification" placeholder="Confirmar Contraseña">
+          <mat-error *ngIf="form.controls.passwordVerification.errors?.required">La contraseña es requerida</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Selecciona su Tipo de documento</mat-label>
+          <mat-select formControlName="tipoDocumento">
+            <mat-option *ngFor="let td of tiposDocumentos" [value]="td.abreviatura">{{td.descripcion}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Ingrese su numero de documento</mat-label>
+          <input matInput formControlName="numeroDocumento" name="numeroDocumento" placeholder="Numero de Documento">
+          <mat-error *ngIf="form.controls.numeroDocumento.errors?.required">Numero de Documento es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Ingrese su numero de telefono</mat-label>
+          <input matInput formControlName="telefono" name="telefono" placeholder="Numero de Telefono">
+          <mat-error *ngIf="form.controls.telefono.errors?.required">Numero de Telefono es requerido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Ingrese su direccion</mat-label>
+          <input matInput formControlName="direccion" name="direccion" placeholder="Direccion">
+          <mat-error *ngIf="form.controls.direccion.errors?.required">Direccion es requerida</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Selecciona su Departamento</mat-label>
+          <mat-select [(ngModel)]="departamento" formControlName="departamento" (change)="consultarCiudadesPorDepartamento(departamento)">
+            <mat-option *ngFor="let departamento of departamentos" [value]="departamento.departmentId">{{departamento.nombre}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field *ngIf="departamento != null elseblock" class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+          <mat-label>Selecciona su Ciudad</mat-label>
+          <mat-select  formControlName="ciudad">
+            <mat-option *ngFor="let ciudad of ciudadesQuery" [value]="ciudad.cityId">{{ciudad.nombre}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- <mat-label>El numero seleccionado es de {{departamento}}</mat-label> -->
+        <ng-template #elseBlock>
+          <mat-form-field class="w-full sm:w-1/2 md:w-1/2 px-4" appearance="standard">
+            <mat-label>Selecciona su Ciudad</mat-label>
+            <mat-select  formControlName="ciudad">
+              <!-- <mat-option *ngFor="let ciudad of ciudadesQuery" [value]="ciudad.cityId">{{ciudad.nombre}}</mat-option> -->
+            </mat-select>
+          </mat-form-field>
+        </ng-template>
+
+        <!--  -->
+       <div class="w-full flex flex-row flex-wrap" *ngIf="!departamento else elseBlock2">
+          <button mat-raised-button  class="bg-principal-700 text-principal-50 btnprimario ml-auto mr-auto mt-5 w-1/3 h-12" (click)="Registro()" type="submit">
+            Aceptar
+            <mat-icon>
+              <span class="material-icons-outlined ml-1">
+                verified
+              </span>
+            </mat-icon>
+          </button>
+        </div>
+
+
+        <ng-template #elseBlock2>
+          <button mat-raised-button class="bg-principal-700 text-principal-50 btnprimario mr-auto ml-auto mt-5 w-1/3 h-12" (click)="Registro()" type="submit">
+            Aceptar
+            <mat-icon>
+              <span class="material-icons-outlined ml-1">
+                verified
+              </span>
+            </mat-icon>
+          </button>
+        </ng-template>
+      </form>
+      <!-- </div> -->
+    </div>
+  </div>
 </header>
-
-
-<app-footer></app-footer>

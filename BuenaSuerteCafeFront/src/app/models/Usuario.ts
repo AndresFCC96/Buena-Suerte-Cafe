@@ -1,4 +1,4 @@
-export class Usuario {
+export interface Usuario {
     userID:number;
     firstName: string;
     lastname: string;
@@ -17,26 +17,4 @@ export class Usuario {
     modificatedby: string;
     modificationdate: Date;
 
-    constructor(userid: number, firstname: string, lastname: string, email: string,
-        documenttype: string, documentnumber: string, phone:string, address: string,
-        gender: string, password: string, role: string, cityid: number, state: string,
-        createdby: string, creationdate: Date, modificatedby: string, modificationdate: Date){
-        this.userID = userid;
-        this.firstName = firstname;
-        this.lastname = lastname;
-        this.documentype = documenttype;
-        this.documentnumber = documentnumber;
-        this.email = email;
-        this.phone = phone;
-        this.address = address;
-        this.gender = gender;
-        this.password = password;
-        this.role = role;
-        this.cityid = cityid;
-        this.state = state;
-        this.createdby = createdby;
-        this.creationdate = creationdate;
-        this.modificatedby = modificatedby;
-        this.modificationdate = modificationdate;
-    }
 }

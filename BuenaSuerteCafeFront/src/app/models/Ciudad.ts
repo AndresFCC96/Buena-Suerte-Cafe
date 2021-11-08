@@ -1,24 +1,13 @@
 export class Ciudad {
-    cityid: number;
-    citycode: string;
-    description: string;
-    departmentid: number;
-    state: string;
-    createdby: string;
-    creationdate: Date;
-    modificatedby: string;
-    modificationdate: Date;
-    constructor(cityid: number, citycode: string, description: string, 
-        departmentid: number, state: string, createdby: string, creationdate: Date, 
-        modifiedby: string, modificationdate: Date){
-            this.cityid = cityid;
-            this.citycode = citycode;
-            this.description = description;
-            this.departmentid = departmentid;
-            this.state = state;
-            this.createdby = createdby;
-            this.creationdate = creationdate;
-            this.modificatedby = modifiedby;
-            this.modificationdate = modificationdate;
+    cityId: number;
+    departmentId: number;
+    codigo: string;
+    nombre: number;
+    constructor(cityid: number, departmentId: number, codigo: string,
+      nombre: number){
+      this.cityId = cityid;
+      this.departmentId = departmentId;
+      this.codigo = codigo;
+      this.nombre = nombre;
     }
 }

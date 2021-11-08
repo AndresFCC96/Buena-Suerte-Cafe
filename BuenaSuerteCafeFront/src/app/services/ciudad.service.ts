@@ -16,4 +16,8 @@ export class CiudadService {
   consultarTodasLasCiudades(): Observable<Ciudad[]>{
     return this.httpClient.get<Ciudad[]>(`${this.url}ciudad/consultarciudades`)
   }
+
+  consultarTodasLasCiudadesPorDepartamento(idDep: number): Observable<Ciudad[]>{
+    return this.httpClient.get<Ciudad[]>(`${this.url}ciudad/consultarciudadespordepartamento?departmentId=${idDep}`)
+  }
 }

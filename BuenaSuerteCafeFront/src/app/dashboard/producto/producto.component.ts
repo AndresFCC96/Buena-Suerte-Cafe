@@ -35,13 +35,13 @@ export class ProductoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if(!this.nombre){
-      this.router.navigate(['/Login']);
-    }else{
-      if(this.rol != "Admin"){
-        this.router.navigate(['']);
-      }
-    }
+    // if(!this.nombre){
+    //   this.router.navigate(['/Login']);
+    // }else{
+    //   if(this.rol != "Admin"){
+    //     this.router.navigate(['']);
+    //   }
+    // }
     this.form = this.formsBuilder.group(
       {
           'nombre': '',
